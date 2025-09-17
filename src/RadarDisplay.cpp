@@ -821,20 +821,19 @@ void RadarDisplay::drawRadarGrid(QPainter& painter)
             }
         }
         
-        // 绘制主扫描线 - 更亮更粗
         double scanRad = qDegreesToRadians(m_scanAngle);
         QPointF scanEnd(screenRadius * qSin(scanRad), -screenRadius * qCos(scanRad));
         
         // 扫描线发光效果
-        painter.setPen(QPen(QColor(0, 255, 0, 100), 8)); // 外发光
+        painter.setPen(QPen(QColor(0, 255, 0, 1), 8)); // 外发光
         painter.drawLine(QPointF(0, 0), scanEnd);
-        painter.setPen(QPen(QColor(0, 255, 0, 255), 4)); // 主扫描线
+        painter.setPen(QPen(QColor(0, 255, 0, 11), 4)); // 主扫描线
         painter.drawLine(QPointF(0, 0), scanEnd);
-        painter.setPen(QPen(QColor(255, 255, 255, 200), 2)); // 内核心
+        painter.setPen(QPen(QColor(255, 255, 255, 1), 2)); // 内核心
         painter.drawLine(QPointF(0, 0), scanEnd);
         
         // 扫描线端点光点
-        painter.setBrush(QBrush(QColor(0, 255, 0, 200)));
+        painter.setBrush(QBrush(QColor(0, 255, 0, 1)));
         painter.setPen(Qt::NoPen);
         painter.drawEllipse(scanEnd, 4, 4);
     }
