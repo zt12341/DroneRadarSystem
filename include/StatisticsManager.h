@@ -30,8 +30,8 @@ struct StatisticsEvent {
     double value; // 威胁值、爆炸半径等
     QString details;
     
-    StatisticsEvent(EventType t, int id = -1, QPointF pos = QPointF(), double val = 0.0, const QString& det = "")
-        : timestamp(QDateTime::currentMSecsSinceEpoch()), type(t), droneId(id), position(pos), value(val), details(det) {}
+    StatisticsEvent(EventType t, int id = -1, QPointF pos = QPointF(), const QString& det = "")
+        : timestamp(QDateTime::currentMSecsSinceEpoch()), type(t), droneId(id), position(pos), details(det) {}
 };
 
 // 统计数据结构
